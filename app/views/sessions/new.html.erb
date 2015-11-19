@@ -1,0 +1,12 @@
+<h3> Login! </h3>
+<hr>
+<form action="<%=sessions_url%>" method="POST">
+	 <%= auth_token %>
+	 <label>Email:</label>
+	 <input type="text" name="user[email]" />
+	 <br>
+	 <label>Password:</label>
+	 <input type="password" name="user[password]" />
+	 <br>
+	 <input type="submit" value="Submit" />
+</form>
