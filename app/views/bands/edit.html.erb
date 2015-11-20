@@ -1,0 +1,8 @@
+<h3>Update Band Name!</h3>
+<hr>
+<label>Current Name: <%= @band.name %></label>
+<form action="<%=band_url(@band)%>" method="POST">
+	<input type="hidden" name="_method" value="patch">
+<%= render 'form' %>
+</form>
+<%= button_to "back to index", bands_url, method: :get %>

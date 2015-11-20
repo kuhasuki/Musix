@@ -1,0 +1,9 @@
+<h3>Edit this Album!</h3>
+<hr>
+<p><%= @album.title %></p>
+<p>By <%= @album.band.name %></p>
+<form action="<%=album_url(@album)%>" method="POST">
+	<input type="hidden" name="_method" value="patch">
+<%= render partial: 'form', locals: { bands: @bands, band: @band, album: @album } %>
+</form>
+<%= button_to "back to index", bands_url, method: :get %>

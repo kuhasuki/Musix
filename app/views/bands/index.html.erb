@@ -1,0 +1,16 @@
+<% @bands.each do |band| %>
+<hr>
+	<p><%= band.name %></p>
+	<%= button_to "edit", edit_band_url(band), method: :get %>
+	<%= button_to "remove",  band_url(band), method: :delete%>
+	<p style="color:red">Albums</p>
+	<% band.albums.each do |album| %>
+		
+		<div style="color:red"><%= album.title %></div>
+		<%= button_to "edit", edit_album_url(album), method: :get%>
+		<%= button_to "remove", album_url(album), method: :delete%>
+	<% end %>
+	<%= button_to "add album", new_album_url, params: { band_name: band.name },  method: :get%>
+<% end %>
+<hr>
+<%= button_to "add band", new_band_url, method: :get %>

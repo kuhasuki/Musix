@@ -1,0 +1,7 @@
+<h3>Add an album!</h3>
+<hr>
+<form action="<%=albums_url%>" method="POST">
+	
+<%= render partial: 'form', locals: { bands: @bands, band: @band, album: @album } %>
+</form>
+<%= button_to "back to index", bands_url, method: :get %>
