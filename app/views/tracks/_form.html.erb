@@ -1,0 +1,20 @@
+	 <%= auth_token %>
+	 <label>Album:</label>
+	 <select name="track[album_id]" >
+	 	<% albums.each do |an_album| %>
+	  <option value="<%= an_album.id %>"<% if an_album.title == album.title %>selected<% end %>> <%= an_album.title %></option>
+	  <% end %>
+	</select>
+	<br>
+	<label>Track:</label>
+	<input type="text" name="track[name]" value="<%= track.name %>" />
+	<br>
+	<label>Track type:</label>
+	<br>
+	<input type="radio" name="track[bonus_track]" value="true" <% if track.bonus_track %>checked<% end %> >Bonus Track<br>
+	<input type="radio" name="track[bonus_track]" value="false"<% unless track.bonus_track %>checked<% end %> >Standard Track<br>
+	<label>Lyrics:</label>
+	<br>
+	<textarea name="track[lyrics]"></textarea>
+	<br>
+	<input type="submit" value="Submit" />
